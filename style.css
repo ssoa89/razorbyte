@@ -1,4 +1,8 @@
-* { margin:0; padding:0; box-sizing:border-box; font-family:"Google Sans Flex", sans-serif; }
+* { margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+    font-family:"Google Sans Flex", sans-serif; 
+}
 
 body {
     background: linear-gradient(135deg,#061439,#0f3460,#1c4fa3);
@@ -10,49 +14,322 @@ body {
 
 @keyframes bgmove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
+#typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+#waveCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to bottom, #061439, #0a1f5c, #000814);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  margin-top: 40vh;
+}
 /* HEADER */
-.header { position: fixed; top: -100px; left: 0; width: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1000; transition: 0.4s; }
-.header.show-header { top: 0; }
-.header section { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; }
-.logo img { width: 50px; }
-.navbar a { color: white; margin-left: 20px; text-decoration: none; font-size: 16px; }
+.header {
+     position: fixed; 
+     top: -100px; left: 0; 
+     width: 100%; 
+     background: rgba(0,0,0,0.8); 
+     backdrop-filter: blur(10px); 
+     z-index: 1000; 
+     transition: 0.4s; 
+    }
+.header.show-header {
+     top: 0;
+     }
+.header section { 
+    display: flex;
+     justify-content: space-between; 
+     align-items: center;
+      padding: 10px 2% ; 
+    }
+.logo img {
+     width: 50px;
+     }
+.navbar{
+ align-items: center; 
+ justify-content: center;
+}
+.navbar a { 
+    color: rgb(255, 255, 255);
+    margin-right: 50px;
+    margin-left: 90px;
+     text-decoration: none; 
+    font-size: 18px;
+     align-items: center; 
+    justify-content: center; }
+
 
 /* HOME + FUNDO DE VIDRO */
-.home-container0 { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.home-container0 {
+     height: 100vh; 
+     display: flex;
+      align-items: center; 
+      justify-content: center;
+       text-align: center; }
 .hero-text-box { 
-    position: relative; padding: 50px; border-radius: 20px; 
-    background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px); overflow: hidden;
+    position: relative;
+    padding:50px;
+    border-radius: 20px; 
+     overflow: hidden;
 }
-.magical-text { font-size: 70px; font-weight: 900; letter-spacing: 2px; cursor: pointer; }
+.magical-text {  
+    font-weight: 100;  
+    cursor: pointer; 
+}
 
 /* REVEAL (ANIMAÇÃO CANVA) */
-.reveal { opacity: 0; transform: translateY(50px); transition: 1s all ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal { 
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: 1s all ease; 
+}
+.reveal.active {
+    opacity: 1; 
+    transform: translateY(0);
+ }
 
 /* SLIDER */
-.slider { width: 100%; height: 70vh; overflow: hidden; position: relative; margin: 50px 0; }
-.slides { width: 400%; height: 100%; display: flex; }
-.slides input { display: none; }
-.slide { width: 25%; transition: 1s ease; }
-.slide img { width: 100%; height: 100%; object-fit: cover; }
+.slider {
+     width: 100%;
+      height: 600px; 
+      overflow: hidden; 
+      position: relative; 
+      margin: 50px 0;
+     }
+.slides {
+     width: 400%;
+      height: 100%;
+       display: flex; 
+    }
+.slides input { 
+    display: none;
+ }
+.slide { 
+    width: 25%; 
+    transition: 1s ease;
+ }
+.slide img {
+     width: 100%; 
+     height: 100%; 
+     object-fit: cover;
+     }
 
-#radio1:checked ~ .first { margin-left: 0; }
-#radio2:checked ~ .first { margin-left: -25%; }
-#radio3:checked ~ .first { margin-left: -50%; }
-#radio4:checked ~ .first { margin-left: -75%; }
+#radio1:checked ~ .first {
+     margin-left: 0;
+     }
+#radio2:checked ~ .first {
+     margin-left: -25%; 
+    }
+#radio3:checked ~ .first {
+     margin-left: -50%;
+     }
+#radio4:checked ~ .first {
+    margin-left: -75%; 
+}
 
-.manual-navigation { position: absolute; bottom: 20px; width: 100%; display: flex; justify-content: center; }
-.manual-btn { border: 2px solid white; padding: 5px 15px; border-radius: 10px; cursor: pointer; margin: 0 5px; }
+.manual-navigation { 
+    position: absolute; 
+    bottom: 20px; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+ }
+.manual-btn {
+     border: 2px solid white;
+      padding: 5px 15px;
+       border-radius: 10px; 
+       cursor: pointer; 
+       margin: 0 5px; 
+    }
 
 /* CARDS */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 40px 8%; }
-.card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; display: flex; align-items:center; gap: 20px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
-.card img { width: 80px; height: 80px; border-radius: 10px; object-fit: cover; }
+.cards { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    padding: 40px 8%; 
+}
+.card { 
+    background: rgb(0, 0, 0); 
+    padding: 20px;
+     border-radius: 20px; 
+    display: flex; 
+    align-items:center; 
+    gap: 20px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    transition: 0.3s;
+ }
+.card img { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 10px;
+     object-fit: cover;
+     }
 
-.login-card { background: rgba(0,0,0,0.3); padding: 40px; border-radius: 20px; width: 350px; margin: auto; text-align: center; }
-.login-card input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; }
-.login-card button { width: 100%; padding: 12px; background: #5ab4fd; border: none; color: white; border-radius: 8px; cursor: pointer; }
 
-.title { text-align: center; font-size: 40px; margin: 50px 0; }
-.title span { color: #5ab4fd; }
+     .cards2 { 
+    display: grid; 
+    margin-left: 100px;
+    gap: 30px; 
+    padding: 40px 8%; 
+}
+.text{
+    margin-left: 500px;
+    justify-content: center;
+    align-items: center;
+}
+.card2 { 
+
+    padding: 20px;
+    border-radius: 20px; 
+    justify-self: center;
+    align-items:center; 
+    gap: 20px; 
+    transition: 0.3s;
+ }
+     .card2 img { 
+        margin-left: 550px;
+    width: 350px; 
+    height: 350px; 
+    border-radius: 10px;
+     object-fit: cover;
+     }
+
+.title { 
+    text-align: center; 
+    font-size: 40px;
+     margin: 50px 0; 
+    }
+.title span {
+     color: #0990ff;
+     }
+
+     footer{
+    background: #000000;
+    color:#ffffff;
+    padding:60px 8%;
+    font-family: "Google Sans Flex", sans-serif;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:60px;
+}
+
+.top h2{
+    color:#fff;
+    margin:0;
+}
+
+.top h3{
+    margin:5px 0 0;
+    font-weight:400;
+}
+
+.top button{
+    background:#fff;
+    color:var(--light);
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.logo-content{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.socials{
+    display:flex;
+    gap:15px;
+}
+
+nav{
+    display:flex;
+    gap:60px;
+}
+
+nav ul{
+    list-style:none;
+    padding:0;
+}
+
+nav ul h4{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+nav ul li{
+    margin-bottom:8px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--main);
+    font-size:14px;
+}
+
+nav a:hover{
+   color: #fff;
+}
+
+footer p{
+    text-align:center;
+    margin-top:40px;
+    font-size:14px;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #061439, #0a1f5c, #000);
+}
+
+/* Conteúdo na frente */
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+}
+
+h1 {
+  font-size: 3rem;
+}

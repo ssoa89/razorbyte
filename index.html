@@ -12,23 +12,24 @@
 <header class="header">
     <section>
         <a href="#" class="logo">
-            <img src="imagi/1000174453-removebg-preview.png" alt="Logo">
+            <img src="imagi/logo1.png" alt="Logo">
         </a>
         <nav class="navbar">
-            <a href="#home">Home</a>
             <a href="#about">Sobre</a>
-            <a href="#review">Avaliações</a>
-            <a href="#address">Endereço</a>
-            <a href="#login">Login</a>
+            <a href="#review">Nossos Projetos</a>
+            <a href="#address">Nossos parceiros</a>
+            <a href="#login">Fale conosco</a>
         </nav>
     </section>
 </header>
 
 <main>
+    
+    <canvas id="waveCanvas"></canvas>
     <section class="home-container0" id="home">
         <div class="hero-text-box">
-            <h1 class="magical-text">RAZOR BYTE</h1>
-            <h2 id="typing">agilidade natural, precisão digital</h2>
+            <h1 class="magical-text"><img src="imagi/logo.png" width="500" height="250"></h1>
+            <h2>agilidade natural, <span id="typing"></span></h2>
         </div>
     </section>
 
@@ -41,10 +42,10 @@
                 <input type="radio" name="radio-btn" id="radio3">
                 <input type="radio" name="radio-btn" id="radio4">
 
-                <div class="slide first"><img src="imagi/2-razorbill-head.jpg"></div>
-                <div class="slide"><img src="imagi/nsplsh_5b67e44a947e441ba1fe1e9c765b9b0f~mv2.avif"></div>
-                <div class="slide"><img src="imagi/Razorbill_with_a_nice_catch.jpg"></div>
-                <div class="slide"><img src="imagi/2-razorbill-head.jpg"></div>
+                <div class="slide first"><img src="imagi/1.png"></div>
+                <div class="slide"><img src="imagi/5.png"></div>
+                <div class="slide"><img src="imagi/Blue Modern Business Proposal Presentation .png"></div>
+                <div class="slide"><img src="imagi/4.png"></div>
             </div>
             <div class="manual-navigation">
                 <label for="radio1" class="manual-btn"></label>
@@ -55,47 +56,77 @@
         </div>
     </section>
 
-    <section class="destaques">
-        <h2 class="title reveal">Conteúdos em <span>destaque</span></h2>
+    <section class="destaques" id="review">
+        <h2 class="title reveal">Nossos <span>Projetos</span></h2>
         <div class="cards">
             <div class="card reveal">
-                <img src="imagi/nsplsh_5b67e44a947e441ba1fe1e9c765b9b0f~mv2.avif">
+                <img src="imagi/logo1.png">
                 <div class="card-text">
-                    <h3>Projetos</h3>
-                    <p>O que os líderes fazem de diferente?</p>
-                    <a href="#">Saiba mais →</a>
+                    <h3>Coming Soon...</h3>
                 </div>
             </div>
-            <div class="card reveal">
-                <img src="imagi/nsplsh_5b67e44a947e441ba1fe1e9c765b9b0f~mv2.avif">
-                <div class="card-text">
-                    <h3>Cibersegurança</h3>
-                    <p>Transforme sua segurança digital</p>
-                    <a href="#">Saiba mais →</a>
-                </div>
             </div>
         </div>
     </section>
+  
+<section  id="address">
+ <h2 class="title reveal">Nossos <span>Parceiros </span></h2>
+     <div class="card2 reveal">
+    
+                <img src="imagi/Blue Modern Business Proposal Presentation (2).png" height="500" width="500">
+                <div class="text">
+                    <h3>Auvox-Onde a inovação tem valor de Ouro</h3>
+                  
+                </div>
+</section>
 
-    <section class="login reveal" id="login">
-        <div class="login-card">
-            <h3>Login <span>Cliente</span></h3>
-            <input type="email" placeholder="E-mail">
-            <input type="password" placeholder="Senha">
-            <button class="btn-login">Entrar</button>
-        </div>
-    </section>
 </main>
 
+<footer id="login">
+    <div class="footer-inner">
+
+        <div class="top">
+            <div>
+                <h2>RazorByte</h2>
+                <h3>FOCO TOTAL NO MUNDO DOS GAMES</h3>
+            </div>
+        </div>
+
+        <div class="bottom">
+
+            <div class="logo-content">
+                <a href="#">
+                <img class="logoz" src="imagi/logo1.png" height="100" width="100" alt="logo">
+                </a>
+                <div class="socials">
+                    <a href="https://www.instagram.com/razorbyte.dev/">
+                        <img width="70" src="imagi/insatagraaaaaaaaaaam.png" height="40">
+                    </a>
+
+                </div>
+            </div>
+
+            <nav>
+
+          
+
+                <ul>
+                    <li><h4>Recursos</h4></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                </ul>
+
+                <ul>
+                    <li><h4>Empresa</h4></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
 <script>
-    // 1. CARROSSEL AUTOMÁTICO (FIXED)
-    let count = 1;
-    setInterval(() => {
-        count++;
-        if(count > 4) count = 1;
-        let radio = document.getElementById("radio" + count);
-        if(radio) radio.checked = true;
-    }, 4000);
 
     // 2. REVEAL AO SCROLL (EFEITO CANVA)
     const observer = new IntersectionObserver((entries) => {
@@ -124,15 +155,9 @@
         box.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
     });
 </script>
+
 <script>
-    // 1. CARROSSEL (MESMA LÓGICA)
-    let count1 = 1;
-    setInterval(() => {
-        count1++;
-        if(count1 > 4) count1 = 1;
-        let radio = document.getElementById("radio" + count1);
-        if(radio) radio.checked = true;
-    }, 4000);
+  
 
     // 2. REVEAL AO SCROLL (EFEITO CANVA)
     const observer1 = new IntersectionObserver((entries) => {
@@ -147,7 +172,7 @@
     
     // Mostra se o mouse estiver no topo (Y < 60)
     document.addEventListener("mousemove", (e) => {
-        if(e.clientY < 60) {
+        if(e.clientY < 90) {
             header1.style.top = "0";
         } else if (window.scrollY > 100) { 
             // Só esconde se o usuário já tiver rolado um pouco a página
@@ -161,6 +186,93 @@
             header1.style.top = "0";
         }
     });
+
+
 </script>
+<script>const textos = [
+  "precisão digital",
+  "tecnologia avançada"
+];
+
+let i = 0;
+let j = 0;
+let apagando = false;
+
+function escrever() {
+  const elemento = document.getElementById("typing");
+
+  if (!elemento) return; // evita erro
+
+  if (!apagando) {
+    elemento.innerHTML = textos[i].substring(0, j++);
+    
+    if (j > textos[i].length) {
+      apagando = true;
+      setTimeout(escrever, 1500);
+      return;
+    }
+  } else {
+    elemento.innerHTML = textos[i].substring(0, j--);
+    
+    if (j === 0) {
+      apagando = false;
+      i = (i + 1) % textos.length;
+    }
+  }
+
+  setTimeout(escrever, apagando ? 50 : 100);
+}
+
+// garante que carregou tudo
+window.onload = escrever;</script>
+
+<script>
+const canvas = document.getElementById("waveCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let t = 0;
+
+function drawWave(amplitude, wavelength, speed, color, offset) {
+  ctx.beginPath();
+
+  for (let x = 0; x < canvas.width; x++) {
+    let y = amplitude * Math.sin((x * wavelength) + t * speed + offset)
+            + canvas.height * 0.5;
+
+    ctx.lineTo(x, y);
+  }
+
+  ctx.lineTo(canvas.width, canvas.height);
+  ctx.lineTo(0, canvas.height);
+  ctx.closePath();
+
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // camadas de ondas (efeito mais bonito)
+  drawWave(20, 0.01, 0.5, "rgba(0, 150, 255, 0.2)", 0);
+  drawWave(25, 0.008, 0.4, "rgba(0, 120, 255, 0.2)", 2);
+  drawWave(15, 0.012, 0.6, "rgba(0, 180, 255, 0.15)", 4);
+
+  t += 0.02;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+// responsivo
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+    </script>
 </body>
 </html>
