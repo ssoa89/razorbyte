@@ -31,6 +31,16 @@ color:white;
 100%{background-position:0% 50%}
 }
 
+#typing::after {
+  content: "|";
+  animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
 /* HEADER */
 
 .header{
@@ -155,6 +165,39 @@ height:100vh;
 object-fit:cover;
 filter:brightness(70%);
 }
+
+.slides{
+  width:400%;
+  height:100%;
+  display:flex;
+  animation: slide 16s infinite;
+}
+
+.slide{
+  width:25%;
+  flex-shrink:0;
+}
+
+.first{
+  margin-left: 0;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -100%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -200%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -300%;
+}
+
 
 /* BOTÕES */
 
@@ -344,3 +387,183 @@ footer p{
     margin-top:40px;
     font-size:14px;
 }
+
+.logoz{
+    width:60px;
+    height:60px;
+}
+
+/* DESTAQUES */
+
+.destaques{
+padding:80px 8%;
+}
+
+.cards{
+display:grid;
+grid-template-columns: repeat(2, 1fr);
+gap:40px;
+position:relative;
+}
+
+/* CARD */
+
+.card{
+background:#061439;
+border-radius:25px;
+padding:30px;
+display:flex;
+align-items:center;
+gap:20px;
+position:relative;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* IMAGEM */
+
+.card img{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:15px;
+}
+
+/* TEXTO */
+
+.card-text h3{
+color:#5ab4fd;
+font-size:14px;
+margin-bottom:5px;
+}
+
+.card-text p{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.card-text a{
+display:inline-block;
+background:#ffc107;
+color:#000;
+padding:8px 18px;
+border-radius:20px;
+font-size:14px;
+}
+
+/* CARD GRANDE (embaixo) */
+
+.card.big{
+grid-column: span 2;
+width:60%;
+margin:0 auto;
+}
+
+/*login*/
+
+/* LOGIN */
+
+.login{
+margin-top:100px;
+padding-top:80px;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.login-container{
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:40px;
+}
+
+.login-card{
+width:320px;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 30px rgba(0,0,0,0.3);
+display:flex;
+flex-direction:column;
+gap:15px;
+text-align:center;
+transition:.3s;
+}
+
+.login-card:hover{
+transform:translateY(-10px);
+}
+
+.login-card h3{
+font-size:24px;
+}
+
+.login-card p{
+font-size:13px;
+color:#ccc;
+margin-bottom:10px;
+}
+
+.login-card input{
+width:100%;
+padding:12px;
+border:none;
+outline:none;
+border-radius:10px;
+background:rgba(255,255,255,0.15);
+color:#fff;
+font-size:14px;
+}
+
+.login-card input::placeholder{
+color:#ddd;
+}
+
+.login-card button{
+margin-top:10px;
+padding:12px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#5ab4fd,#3a7bd5);
+color:#fff;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.login-card button:hover{
+transform:scale(1.05);
+}
+
+.login-card .extra{
+font-size:13px;
+color:#ccc;
+margin-top:10px;
+}
+
+.login-card .extra a{
+color:#5ab4fd;
+}
+
+/* imagi das coisa chegano */
+
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out; /* Controla a suavidade */
+}
+
+/* Estado final: visível e na posição original */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Se quiser aquele efeito de delay do Canva, podemos usar isso: */
+.item:nth-child(2) { transition-delay: 200ms; }
+.item:nth-child(3) { transition-delay: 400ms; }
