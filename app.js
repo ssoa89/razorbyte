@@ -32,23 +32,23 @@ function escrever() {
 }
 
 escrever();
+const box = document.querySelector(".hero-text-box");
 
+box.addEventListener("mousemove", (e) => {
+    const { x, y } = box.getBoundingClientRect();
+    const mouseX = e.clientX - x;
+    const mouseY = e.clientY - y;
 
-/* coisa chegano */
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    // Se o elemento está visível na tela...
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      // Opcional: remover a classe se quiser que a animação 
-      // aconteça toda vez que o usuário subir e descer.
-      // entry.target.classList.remove('show');
-    }
-  });
+    // Cria um efeito de lanterna que segue o mouse dentro do fundo
+    box.style.background = `radial-gradient(
+        circle at ${mouseX}px ${mouseY}px, 
+        rgba(90, 180, 253, 0.15) 0%, 
+        transparent 80%
+    )`;
 });
 
-// Seleciona tudo que deve ser animado
-const elements = document.querySelectorAll('.hidden');
-elements.forEach((el) => observer.observe(el));
+box.addEventListener("mouseleave", () => {
+    box.style.background = "rgba(255, 255, 255, 0.03)";
+});
+
+   
