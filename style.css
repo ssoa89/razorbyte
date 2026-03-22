@@ -1,278 +1,335 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RazorByte | Agilidade Digital</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
-</head>
-<body>
+* { margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+    font-family:"Google Sans Flex", sans-serif; 
+}
 
-<header class="header">
-    <section>
-        <a href="#" class="logo">
-            <img src="imagi/logo1.png" alt="Logo">
-        </a>
-        <nav class="navbar">
-            <a href="#about">Sobre</a>
-            <a href="#review">Nossos Projetos</a>
-            <a href="#address">Nossos parceiros</a>
-            <a href="#login">Fale conosco</a>
-        </nav>
-    </section>
-</header>
+body {
+    background: linear-gradient(135deg,#061439,#0f3460,#1c4fa3);
+    background-size:400% 400%;
+    animation: bgmove 15s infinite ease-in-out;
+    color: white;
+    overflow-x: hidden;
+}
 
-<main>
-    
-    <canvas id="waveCanvas"></canvas>
-    <section class="home-container0" id="home">
-        <div class="hero-text-box">
-            <h1 class="magical-text"><img src="imagi/logo.png" width="500" height="250"></h1>
-            <h2>agilidade natural, <span id="typing"></span></h2>
-        </div>
-    </section>
+@keyframes bgmove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
-    <section class="about reveal" id="about">
-        <h2 class="title">Sobre <span>nós</span></h2>
-        <div class="slider">
-            <div class="slides">
-                <input type="radio" name="radio-btn" id="radio1" checked>
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
+#typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
 
-                <div class="slide first"><img src="imagi/1.png"></div>
-                <div class="slide"><img src="imagi/5.png"></div>
-                <div class="slide"><img src="imagi/Blue Modern Business Proposal Presentation .png"></div>
-                <div class="slide"><img src="imagi/4.png"></div>
-            </div>
-            <div class="manual-navigation">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-            </div>
-        </div>
-    </section>
+@keyframes blink {
+  50% { opacity: 0; }
+}
+#waveCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to bottom, #061439, #0a1f5c, #000814);
+}
 
-    <section class="destaques" id="review">
-        <h2 class="title reveal">Nossos <span>Projetos</span></h2>
-        <div class="cards">
-            <div class="card reveal">
-                <img src="imagi/logo1.png">
-                <div class="card-text">
-                    <h3>Coming Soon...</h3>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-  
-<section  id="address">
- <h2 class="title reveal">Nossos <span>Parceiros </span></h2>
-     <div class="card2 reveal">
-    
-                <img src="imagi/Blue Modern Business Proposal Presentation (2).png" height="500" width="500">
-                <div class="text">
-                    <h3>Auvox-Onde a inovação tem valor de Ouro</h3>
-                  
-                </div>
-</section>
-
-</main>
-
-<footer id="login">
-    <div class="footer-inner">
-
-        <div class="top">
-            <div>
-                <h2>RazorByte</h2>
-                <h3>FOCO TOTAL NO MUNDO DOS GAMES</h3>
-            </div>
-        </div>
-
-        <div class="bottom">
-
-            <div class="logo-content">
-                <a href="#">
-                <img class="logoz" src="imagi/logo1.png" height="100" width="100" alt="logo">
-                </a>
-                <div class="socials">
-                    <a href="https://www.instagram.com/razorbyte.dev/">
-                        <img width="70" src="imagi/insatagraaaaaaaaaaam.png" height="40">
-                    </a>
-
-                </div>
-            </div>
-
-            <nav>
-
-          
-
-                <ul>
-                    <li><h4>Recursos</h4></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Ajuda</a></li>
-                    <li><a href="#">Comunidade</a></li>
-                </ul>
-
-                <ul>
-                    <li><h4>Empresa</h4></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Carreiras</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</footer>
-<script>
-
-    // 2. REVEAL AO SCROLL (EFEITO CANVA)
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // 3. HEADER INTELIGENTE
-    const header = document.querySelector(".header");
-    document.addEventListener("mousemove", (e) => {
-        if(e.clientY < 60) header.classList.add("header-visible");
-        else header.classList.remove("header-visible");
-    });
-
-    // 4. EFEITO TILT NO TÍTULO
-    const box = document.querySelector(".hero-text-box");
-    box.addEventListener("mousemove", (e) => {
-        const { x, y, width, height } = box.getBoundingClientRect();
-        const rotX = (height / 2 - (e.clientY - y)) / 10;
-        const rotY = ((e.clientX - x) - width / 2) / 10;
-        box.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-    });
-    box.addEventListener("mouseleave", () => {
-        box.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
-    });
-</script>
-
-<script>
-  
-
-    // 2. REVEAL AO SCROLL (EFEITO CANVA)
-    const observer1 = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer1.observe(el));
-
-    // 3. SUA NAVBAR (APARECE NO TOPO / SOME NO SCROLL)
-    const header1 = document.querySelector(".header");
-    
-    // Mostra se o mouse estiver no topo (Y < 60)
-    document.addEventListener("mousemove", (e) => {
-        if(e.clientY < 90) {
-            header1.style.top = "0";
-        } else if (window.scrollY > 100) { 
-            // Só esconde se o usuário já tiver rolado um pouco a página
-            header1.style.top = "-100px";
-        }
-    });
-
-    // Garante que ela apareça se o usuário subir a página toda
-    window.addEventListener("scroll", () => {
-        if (window.scrollY < 50) {
-            header1.style.top = "0";
-        }
-    });
-
-
-</script>
-<script>const textos = [
-  "precisão digital",
-  "tecnologia avançada"
-];
-
-let i = 0;
-let j = 0;
-let apagando = false;
-
-function escrever() {
-  const elemento = document.getElementById("typing");
-
-  if (!elemento) return; // evita erro
-
-  if (!apagando) {
-    elemento.innerHTML = textos[i].substring(0, j++);
-    
-    if (j > textos[i].length) {
-      apagando = true;
-      setTimeout(escrever, 1500);
-      return;
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  margin-top: 40vh;
+}
+/* HEADER */
+.header {
+     position: fixed; 
+     top: -100px; left: 0; 
+     width: 100%; 
+     background: rgba(0,0,0,0.8); 
+     backdrop-filter: blur(10px); 
+     z-index: 1000; 
+     transition: 0.4s; 
     }
-  } else {
-    elemento.innerHTML = textos[i].substring(0, j--);
-    
-    if (j === 0) {
-      apagando = false;
-      i = (i + 1) % textos.length;
+.header.show-header {
+     top: 0;
+     }
+.header section { 
+    display: flex;
+     justify-content: space-between; 
+     align-items: center;
+      padding: 10px 2% ; 
     }
-  }
+.logo img {
+     width: 50px;
+     }
+.navbar{
+ align-items: center; 
+ justify-content: center;
+}
+.navbar a { 
+    color: rgb(255, 255, 255);
+    margin-right: 50px;
+    margin-left: 90px;
+     text-decoration: none; 
+    font-size: 18px;
+     align-items: center; 
+    justify-content: center; }
 
-  setTimeout(escrever, apagando ? 50 : 100);
+
+/* HOME + FUNDO DE VIDRO */
+.home-container0 {
+     height: 100vh; 
+     display: flex;
+      align-items: center; 
+      justify-content: center;
+       text-align: center; }
+.hero-text-box { 
+    position: relative;
+    padding:50px;
+    border-radius: 20px; 
+     overflow: hidden;
+}
+.magical-text {  
+    font-weight: 100;  
+    cursor: pointer; 
 }
 
-// garante que carregou tudo
-window.onload = escrever;</script>
+/* REVEAL (ANIMAÇÃO CANVA) */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: 1s all ease; 
+}
+.reveal.active {
+    opacity: 1; 
+    transform: translateY(0);
+ }
 
-<script>
-const canvas = document.getElementById("waveCanvas");
-const ctx = canvas.getContext("2d");
+/* SLIDER */
+.slider {
+     width: 100%;
+      height: 600px; 
+      overflow: hidden; 
+      position: relative; 
+      margin: 50px 0;
+     }
+.slides {
+     width: 400%;
+      height: 100%;
+       display: flex; 
+    }
+.slides input { 
+    display: none;
+ }
+.slide { 
+    width: 25%; 
+    transition: 1s ease;
+ }
+.slide img {
+     width: 100%; 
+     height: 100%; 
+     object-fit: cover;
+     }
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let t = 0;
-
-function drawWave(amplitude, wavelength, speed, color, offset) {
-  ctx.beginPath();
-
-  for (let x = 0; x < canvas.width; x++) {
-    let y = amplitude * Math.sin((x * wavelength) + t * speed + offset)
-            + canvas.height * 0.5;
-
-    ctx.lineTo(x, y);
-  }
-
-  ctx.lineTo(canvas.width, canvas.height);
-  ctx.lineTo(0, canvas.height);
-  ctx.closePath();
-
-  ctx.fillStyle = color;
-  ctx.fill();
+#radio1:checked ~ .first {
+     margin-left: 0;
+     }
+#radio2:checked ~ .first {
+     margin-left: -25%; 
+    }
+#radio3:checked ~ .first {
+     margin-left: -50%;
+     }
+#radio4:checked ~ .first {
+    margin-left: -75%; 
 }
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+.manual-navigation { 
+    position: absolute; 
+    bottom: 20px; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+ }
+.manual-btn {
+     border: 2px solid white;
+      padding: 5px 15px;
+       border-radius: 10px; 
+       cursor: pointer; 
+       margin: 0 5px; 
+    }
 
-  // camadas de ondas (efeito mais bonito)
-  drawWave(20, 0.01, 0.5, "rgba(0, 150, 255, 0.2)", 0);
-  drawWave(25, 0.008, 0.4, "rgba(0, 120, 255, 0.2)", 2);
-  drawWave(15, 0.012, 0.6, "rgba(0, 180, 255, 0.15)", 4);
+/* CARDS */
+.cards { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    padding: 40px 8%; 
+}
+.card { 
+    background: rgb(0, 0, 0); 
+    padding: 20px;
+     border-radius: 20px; 
+    display: flex; 
+    align-items:center; 
+    gap: 20px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    transition: 0.3s;
+ }
+.card img { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 10px;
+     object-fit: cover;
+     }
 
-  t += 0.02;
 
-  requestAnimationFrame(animate);
+     .cards2 { 
+    display: grid; 
+    margin-left: 100px;
+    gap: 30px; 
+    padding: 40px 8%; 
+}
+.text{
+    margin-left: 500px;
+    justify-content: center;
+    align-items: center;
+}
+.card2 { 
+
+    padding: 20px;
+    border-radius: 20px; 
+    justify-self: center;
+    align-items:center; 
+    gap: 20px; 
+    transition: 0.3s;
+ }
+     .card2 img { 
+        margin-left: 550px;
+    width: 350px; 
+    height: 350px; 
+    border-radius: 10px;
+     object-fit: cover;
+     }
+
+.title { 
+    text-align: center; 
+    font-size: 40px;
+     margin: 50px 0; 
+    }
+.title span {
+     color: #0990ff;
+     }
+
+     footer{
+    background: #000000;
+    color:#ffffff;
+    padding:60px 8%;
+    font-family: "Google Sans Flex", sans-serif;
 }
 
-animate();
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+}
 
-// responsivo
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
-    </script>
-</body>
-</html>
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:60px;
+}
+
+.top h2{
+    color:#fff;
+    margin:0;
+}
+
+.top h3{
+    margin:5px 0 0;
+    font-weight:400;
+}
+
+.top button{
+    background:#fff;
+    color:var(--light);
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.logo-content{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.socials{
+    display:flex;
+    gap:15px;
+}
+
+nav{
+    display:flex;
+    gap:60px;
+}
+
+nav ul{
+    list-style:none;
+    padding:0;
+}
+
+nav ul h4{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+nav ul li{
+    margin-bottom:8px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--main);
+    font-size:14px;
+}
+
+nav a:hover{
+   color: #fff;
+}
+
+footer p{
+    text-align:center;
+    margin-top:40px;
+    font-size:14px;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #061439, #0a1f5c, #000);
+}
+
+/* Conteúdo na frente */
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+}
+
+h1 {
+  font-size: 3rem;
+}
