@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RazorByte | Agilidade Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+<!-- NAVBAR -->
+<header class="header">
+  <section>
+    <a href="#" class="logo">
+      <img src="imagi/passaro.png" alt="RazorByte">
+    </a>
+    <nav class="navbar">
+      <a href="#about">Sobre</a>
+      <a href="#review">Projetos</a>
+      <a href="#address">Parceiros</a>
+      <a href="#login">Fale conosco</a>
+    </nav>
+  </section>
+</header>
+ 
+<!-- SLIDER -->
+<div class="slider-container">
+  <div class="slider-track" id="track">
+    <div class="slide"><img src="imagi/slide1.png" alt="Slide 1"></div>
+    <div class="slide"><img src="imagi/slide2.png" alt="Slide 2"></div>
+    <div class="slide"><img src="imagi/slide3.png" alt="Slide 3"></div>
+    <div class="slide"><img src="imagi/slide4.png" alt="Slide 4"></div>
+    <div class="slide"><img src="imagi/slide5.png" alt="Slide 5"></div>
+  </div>
+  <button class="btn btn-prev" onclick="mudar(-1)">&#8592;</button>
+  <button class="btn btn-next" onclick="mudar(1)">&#8594;</button>
+  <div class="dots" id="dots"></div>
+</div>
+ 
+<!-- PROJETOS -->
+<section class="destaques" id="review">
+  <h2 class="title reveal">Nossos <span>Projetos</span></h2>
+  <div class="cards">
+    <div class="card reveal">
+      <img src="imagi/lacooo.jpeg" alt="Projeto Laço">
+      <div class="card-text">
+        <h3>Laço</h3>
+        <h4>O Laço é um projeto dedicado a conectar pessoas que necessitam de apoio e cuidados, especificamente idosos.</h4>
+        <button class="btn-laco">Saiba mais sobre o Laço</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipe">
+  <div class="equipe-inner">
+ 
+    <div class="equipe-header reveal">
+      <h2 class="title">As pessoas por trás da <span>RazorByte</span></h2>
+      <p class="equipe-sub">Um time apaixonado por tecnologia e comprometido em transformar ideias em soluções reais.</p>
+    </div>
+ 
+    <div class="equipe-grid">
+ 
+      <!-- ── MEMBRO 1 ── -->
+      <div class="member-card reveal">
+        <div class="member-photo-wrap">
+          <!-- Se tiver foto: troque o <div class="member-initials"> pela tag abaixo -->
+          <!-- <img class="member-photo" src="imagi/foto-nome.jpg" alt="Nome do Membro"> -->
+          <div class="member-initials ini-a">DS</div> 
+        </div>
+        <div class="member-name">Diego Sousa</div>
+        <div class="member-role">CEO &amp; Fundador</div>
+        <div class="member-socials">
+          <a class="member-soc" href="https://www.instagram.com/89ssoa/" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="member-soc" href="https://www.linkedin.com/in/diego-sousa-4198933b6/?skipRedirect=true" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="member-soc" href="https://github.com/ssoa89" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- ── MEMBRO 2 ── -->
+      <div class="member-card reveal">
+        <div class="member-photo-wrap">
+          <div class="member-initials ini-b">FD</div>
+        </div>
+        <div class="member-name">David Santos</div>
+        <div class="member-role">CTO &amp; Dev Full-Stack</div>
+        <div class="member-socials">
+          <a class="member-soc" href="https://www.instagram.com/david_sant77_/" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="member-soc" href="https://www.linkedin.com/in/francisco-david-oliveira-santos-087844314/" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="member-soc" href="https://github.com/David-Santos0" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- ── MEMBRO 3 ── -->
+      <div class="member-card reveal">
+        <div class="member-photo-wrap">
+          <div class="member-initials ini-c">BD</div>
+        </div>
+        <div class="member-name">Bárbara Delmondes</div>
+        <div class="member-role">Designer UI/UX</div>
+        <div class="member-socials">
+          <a class="member-soc" href="https://www.instagram.com/delmondees/" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="member-soc" href="https://www.linkedin.com/in/barbara-delmondes-32a731380/" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="member-soc" href="https://github.com/its-insomnia" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- ── MEMBRO 4 ── -->
+      <div class="member-card reveal">
+        <div class="member-photo-wrap">
+          <div class="member-initials ini-d">JL</div>
+        </div>
+        <div class="member-name">João Lopes</div>
+        <div class="member-role">Dev Back-End</div>
+        <div class="member-socials">
+          <a class="member-soc" href="https://www.instagram.com/jv_l0p3s/" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="member-soc" href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="member-soc" href="https://github.com/joao-souls" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+      </div>
+ 
+ 
+    </div>
+  </div>
+</section>
+ 
+ 
+<!-- PARCEIROS -->
+<section id="address">
+  <h2 class="title reveal">Nossos <span>Parceiros</span></h2>
+  <div class="card2 reveal">
+    <img src="imagi/auvotis.jpeg" alt="Auvox">
+    <div class="text">
+      <span class="badge">Parceiro Oficial</span>
+      <h3>Auvox — Onde a inovação tem <br> valor de Ouro</h3>
+      <p>Trabalhamos lado a lado com a Auvox para entregar soluções de alto impacto com excelência e inovação.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer id="login">
+  <div class="footer-inner">
+ 
+    <div class="footer-top">
+ 
+      <div class="footer-brand">
+        <div class="footer-brand-name">RazorByte</div>
+        <p class="footer-brand-tagline">Agilidade natural, precisão digital.</p>
+        <div class="footer-socials">
+          <a class="footer-social-btn" href="https://www.instagram.com/razorbyte.dev/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="20.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="footer-social-btn" href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="footer-social-btn" href="#" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <div class="footer-newsletter">
+          <input class="footer-input" type="email" placeholder="seu@email.com">
+          <button class="footer-btn-news">Inscrever</button>
+        </div>
+      </div>
+ 
+      <div class="footer-col">
+        <div class="footer-col-title">Produto</div>
+        <ul>
+          <li><a href="#">Visão geral</a></li>
+          <li><a href="#review">Projetos</a></li>
+          <li><a href="#">Laço</a></li>
+          <li><a href="#address">Parceiros</a></li>
+        </ul>
+      </div>
+ 
+      <div class="footer-col">
+        <div class="footer-col-title">Empresa</div>
+        <ul>
+          <li><a href="#about">Sobre nós</a></li>
+          <li><a href="#">Carreiras</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Imprensa</a></li>
+        </ul>
+      </div>
+ 
+      <div class="footer-col">
+        <div class="footer-col-title">Suporte</div>
+        <ul>
+          <li><a href="#">Ajuda</a></li>
+          <li><a href="#">Comunidade</a></li>
+          <li><a href="#">Privacidade</a></li>
+          <li><a href="#">Termos</a></li>
+        </ul>
+      </div>
+ 
+    </div>
+ 
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 RazorByte. Todos os direitos reservados.</p>
+    </div>
+ 
+  </div>
+</footer>
+ 
+<script>
+  // ── SLIDER ──
+  var atual = 0;
+  var total = 5;
+  var track = document.getElementById("track");
+  var dotsContainer = document.getElementById("dots");
+ 
+  for (var i = 0; i < total; i++) {
+    var dot = document.createElement("div");
+    dot.className = "dot" + (i === 0 ? " active" : "");
+    dot.setAttribute("data-i", i);
+    dot.onclick = function () { irPara(parseInt(this.getAttribute("data-i"))); };
+    dotsContainer.appendChild(dot);
+  }
+ 
+  function irPara(index) {
+    atual = index;
+    track.style.transform = "translateX(-" + (atual * 100) + "%)";
+    document.querySelectorAll(".dot").forEach(function (d, i) {
+      d.className = "dot" + (i === atual ? " active" : "");
+    });
+  }
+ 
+  function mudar(dir) {
+    atual = (atual + dir + total) % total;
+    irPara(atual);
+  }
+ 
+  setInterval(function () { mudar(1); }, 8000);
+ 
+  // ── REVEAL ON SCROLL ──
+  var reveals = document.querySelectorAll(".reveal");
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+ 
+  reveals.forEach(function (el) { observer.observe(el); });
+</script>
+ 
+</body>
+</html>
