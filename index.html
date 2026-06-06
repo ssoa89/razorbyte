@@ -13,7 +13,7 @@
 <header class="header">
   <section>
     <a href="#" class="logo">
-      <img src="imagi/passaro.png" alt="RazorByte">
+      <img src="imagi/logotomia.png" alt="RazorByte">
     </a>
     <nav class="navbar">
       <a href="#about">Sobre</a>
@@ -28,7 +28,7 @@
 <!-- SLIDER -->
 <div class="slider-container">
   <div class="slider-track" id="track">
-    <div class="slide"><img src="imagi/slide1.png" alt="Slide 1"></div>
+    <div class="slide"><img src="imagi/s11.png" alt="Slide 1"></div>
     <div class="slide"><img src="imagi/slide2.png" alt="Slide 2"></div>
     <div class="slide"><img src="imagi/slide3.png" alt="Slide 3"></div>
     <div class="slide"><img src="imagi/slide4.png" alt="Slide 4"></div>
@@ -381,7 +381,6 @@
  
           <button class="form-btn" type="submit">
             Enviar mensagem
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
         </form>
       </div>
@@ -529,7 +528,30 @@
   }, { threshold: 0.15 });
  
   reveals.forEach(function (el) { observer.observe(el); });
-    </script>
+  
+  //PHP MAIL
+
+  // Lê parâmetros da URL após redirecionamento do PHP
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("enviado") === "1") {
+      var s = document.getElementById("form-success");
+      if (s) { s.style.display = "flex"; }
+    }
+    if (params.get("enviado") === "0") {
+      var e = document.getElementById("form-error");
+      if (e) { e.style.display = "block"; e.textContent = "Erro ao enviar. Tente novamente mais tarde."; }
+    }
+    if (params.get("erros")) {
+      var e = document.getElementById("form-error");
+      if (e) {
+        e.style.display = "block";
+        e.textContent = decodeURIComponent(params.get("erros")).replace(/\|/g, " • ");
+      }
+    }
+  })();
+
+  </script>
 
  
 </body>
