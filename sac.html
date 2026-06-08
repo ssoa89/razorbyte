@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laço - Contato</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+ 
+    <header class="header">
+        <section>
+            <div class="logo">
+               <a href="./index2.html"><img src="./imgLaco/laco.png" alt="Laço"></a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="./index2.html">Home</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+ 
+<main>
+ 
+    <!-- FORMULÁRIO -->
+    <div class="form-wrap">
+        <div class="form-header">
+            <div class="form-icone">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6a0dad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+            </div>
+            <div>
+                <h2>Fale Conosco</h2>
+                <p>Preencha o formulário e entraremos em contato em breve.</p>
+            </div>
+        </div>
+ 
+        <div class="form-success" id="form-success" style="display:none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Mensagem enviada! Logo entraremos em contato.
+        </div>
+        <div class="form-error" id="form-error" style="display:none"></div>
+ 
+        <form class="contato-form" action="enviarSac.php" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="nome">Nome</label>
+                    <input class="form-inp" type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">E-mail</label>
+                    <input class="form-inp" type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+            </div>
+ 
+            <div class="form-group">
+                <label class="form-label" for="assunto">Assunto</label>
+                <select class="form-inp" id="assunto" name="assunto" required>
+                    <option value="">Selecione um assunto</option>
+                    <option value="Parceria comercial">Parceria comercial</option>
+                    <option value="Projeto Laço">Problemas com profissionais</option>
+                    <option value="Problemas com o Laço">Problemas com app Laço</option>
+                    <option value="Dúvidas">Dúvidas</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+ 
+            <div class="form-group">
+                <label class="form-label" for="msg">Mensagem</label>
+                <textarea class="form-inp form-textarea" id="msg" name="mensagem" placeholder="Conte um pouco mais sobre o que você precisa..." required></textarea>
+            </div>
+ 
+            <button class="form-btn" type="submit">Enviar mensagem ➔</button>
+        </form>
+    </div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PERGUNTAS -->
+    <section id="perguntas">
+        <h2 class="faq-titulo">Perguntas frequentes</h2>
+        <p class="faq-subtitulo">Tire suas dúvidas sobre nossos cuidadores</p>
+ 
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    Quais são as funções que um cuidador não desempenha?
+                    <span class="faq-seta">+</span>
+                </button>
+                <div class="faq-resposta">
+                    <p>O cuidador não desempenha funções de trabalhos domésticos. Eles não lavam, não passam roupas e nem fazem faxina nas residências.</p>
+                </div>
+            </div>
+ 
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    Posso confiar nos profissionais?
+                    <span class="faq-seta">+</span>
+                </button>
+                <div class="faq-resposta">
+                    <p>Claro! Para fazer parte do Laço, todos os profissionais passam por um rigoroso processo de seleção, incluindo envio de documentos oficiais e monitoramento constante através das avaliações de clientes.</p>
+                </div>
+            </div>
+ 
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    Posso conversar com o cuidador antes de contratá-lo?
+                    <span class="faq-seta">+</span>
+                </button>
+                <div class="faq-resposta">
+                    <p>Sim. O Laço permite que você entre em contato com o cuidador antes da contratação para tirar dúvidas, conhecer sua experiência e garantir que ele atende às necessidades do idoso.</p>
+                </div>
+            </div>
+ 
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    O serviço está disponível aos finais de semana e feriados?
+                    <span class="faq-seta">+</span>
+                </button>
+                <div class="faq-resposta">
+                    <p>Sim. A disponibilidade depende de cada cuidador cadastrado na plataforma. Ao acessar o perfil do profissional, você poderá verificar seus horários de atendimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <footer class="footer">
+            <div class="footer-container">
+                
+                <!-- Logo -->
+                <div class="footer-logo">
+                <img src="./imgLaco/laco.png" alt="Laço">
+                </div>
+
+                <!-- Contatos -->
+                <div class="footer-contact">
+                    <h3>CONTATOS</h3>
+                    <p>55 11 99972-4272</p>
+
+                    <h3 class="social-title">EMPRESA RESPONSAVEL</h3>
+
+                    <div>
+                        <a href="./index.html"><img class="logotomia" src="./imgLaco/logotomia.png" alt="Instagram"></a>
+                    </div>
+                </div>
+
+                <!-- Endereço + mapa -->
+                <div class="footer-location">
+                    <p>
+                    Escola Técnica Estadual de Guaianazes, Rua Feliciano de Mendonça 290, São Paulo <br>
+                    São Paulo, 08460-365<br>
+                    </p>
+                </div>
+            </div>
+        </footer>
+ 
+</main>
+ 
+<script>
+    function toggleFaq(btn) {
+        var item = btn.parentElement;
+        item.classList.toggle("aberto");
+    }
+ 
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get("enviado") === "1") {
+            var s = document.getElementById("form-success");
+            if (s) s.style.display = "flex";
+        }
+        if (params.get("enviado") === "0") {
+            var e = document.getElementById("form-error");
+            if (e) { e.style.display = "block"; e.textContent = "Erro ao enviar. Tente novamente mais tarde."; }
+        }
+        if (params.get("erros")) {
+            var e = document.getElementById("form-error");
+            if (e) {
+                e.style.display = "block";
+                e.textContent = decodeURIComponent(params.get("erros")).replace(/\|/g, " • ");
+            }
+        }
+    })();
+</script>
+ 
+</body>
+</html>
+ 
+

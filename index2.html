@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laço</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+<body>
+ <header class="header">
+        <section>
+            <div class="logo">
+               <a href="#home"><img src="./imgLaco/laco.png" alt="Laço"></a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#trabalhos">trabalhos</a></li>
+                    <li><a href="sac.html">Contato</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    
+    <main>
+
+        <section id="home">
+            <div class="home">
+                <div class="slider-container">
+                    <div class="slider-track" id="track">
+        
+                        <div class="slide"><img src="./imgLaco/v1.jpeg" alt="Slide 1"></div>
+                        <div class="slide"><img src="./imgLaco/v6.jpeg" alt="Slide 2"></div>
+                        <div class="slide"><img src="./imgLaco/v3.jpeg" alt="Slide 3"></div>
+                        <div class="slide"><img src="./imgLaco/v4.jpeg" alt="Slide 4"></div>
+                        <div class="slide"><img src="./imgLaco/v5.jpeg" alt="Slide 5"></div>
+                    </div>
+
+                    <button class="btn btn-prev" onclick="mudar(-1)">&#8592;</button>
+                    <button class="btn btn-next" onclick="mudar(1)">&#8594;</button>
+ 
+                    <div class="dots" id="dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trabalhos">
+           
+            <h2 class="faq-titulo">Trabalhos</h2>
+            <p class="faq-subtitulo">Solicite trabalhos conforme suas necessidades.</p>
+
+            <div class="centralizar">
+            <div class="card">
+                <img src="./imgLaco/velho2.jpeg" alt="Cuidados Domiciliares" />
+                <div class="card-body">
+                <h3>Cuidados Domiciliares</h3>
+                <p>Oferecemos serviços de cuidados domiciliares, incluindo assistência com tarefas diárias.</p>
+                <div class="badge"><i class="ti ti-calendar"></i> Disponível para amanhã, tarde e noite</div>
+                <button class="card-btn">Agendar Serviço</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./imgLaco/velho3.jpeg" alt="Higiene Pessoal" />
+                <div class="card-body">
+                <h3>Higiene Pessoal</h3>
+                <p>Auxiliamos os idosos com banho, troca de roupas, cuidados com a higiene e conforto diário, sempre com respeito e atenção.</p>
+                <div class="badge"><i class="ti ti-calendar"></i> Disponível para amanhã, tarde e noite</div>
+                <button class="card-btn">Agendar Serviço</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./imgLaco/velho4.jpeg" alt="Administração de Medicamentos" />
+                <div class="card-body">
+                <h3>Administração de Medicamentos</h3>
+                <p>Ajudamos na organização e administração correta dos medicamentos conforme orientação médica e horários definidos.</p>
+                <div class="badge"><i class="ti ti-calendar"></i> Disponível para amanhã e noite</div>
+                <button class="card-btn">Agendar Serviço</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="centralizar">
+            <div class="card">
+                <img src="./imgLaco/velho5.jpeg" alt="Acompanhamento em Consultas" />
+                <div class="card-body">
+                <h3>Acompanhamento em Consultas</h3>
+                <p>Oferecemos acompanhamento em consultas médicas, exames e passeios, garantindo segurança e apoio durante o trajeto.</p>
+                <div class="badge"><i class="ti ti-calendar"></i> Disponível para tarde e manhã</div>
+                <button class="card-btn">Agendar Serviço</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./imgLaco/velho6.jpeg" alt="Companhia e Socialização" />
+                <div class="card-body">
+                <h3>Companhia e Socialização</h3>
+                <p>Promovemos momentos de conversa, lazer e interação para estimular o bem-estar emocional e evitar o isolamento.</p>
+                <div class="badge"><i class="ti ti-calendar"></i> Disponível para amanhã e tarde </div>
+                <button class="card-btn">Agendar Serviço</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./imgLaco/velho7.jpeg" alt="Preparação de Refeições" />
+                <div class="card-body">
+                <h3>Preparação de Refeições</h3>
+                <p>Preparamos refeições simples e saudáveis, respeitando as necessidades alimentares e recomendações médicas do idoso.</p>
+                <div class="badge"><i class="ti ti-calendar"></i> Disponível para tarde</div>
+                <button class="card-btn">Agendar Serviço</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="centralizar">
+            <div class="card">
+                <img src="./imgLaco/velho8.jpeg" alt="Cuidados Noturnos" />
+                <div class="card-body">
+                <h3>Cuidados Noturnos</h3>
+                <p>Realizamos acompanhamento noturno para garantir conforto, segurança e assistência em qualquer necessidade durante a noite.</p>
+                <div class="badge"><i class="ti ti-calendar"></i> Disponível para noite</div>
+                <button class="card-btn">Agendar Serviço</button>
+                </div>
+            </div>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+                
+                <!-- Logo -->
+                <div class="footer-logo">
+                <img src="./imgLaco/laco.png" alt="Laço">
+                </div>
+
+                <!-- Contatos -->
+                <div class="footer-contact">
+                    <h3>CONTATOS</h3>
+                    <p>55 11 99972-4272</p>
+
+                    <h3 class="social-title">EMPRESA RESPONSAVEL</h3>
+
+                    <div>
+                        <a href="./index.html"><img class="logotomia" src="./imgLaco/logotomia.png" alt="Instagram"></a>
+                    </div>
+                </div>
+
+                <!-- Endereço + mapa -->
+                <div class="footer-location">
+                    <p>
+                    Escola Técnica Estadual de Guaianazes, Rua Feliciano de Mendonça 290, São Paulo <br>
+                    São Paulo, 08460-365<br>
+                    </p>
+                </div>
+            </div>
+
+           
+        </footer>
+            
+    </main>       
+
+    <script>
+        var atual = 0;
+        var total = 5;
+        var track = document.getElementById("track");
+        var dotsContainer = document.getElementById("dots");
+
+        for (var i = 0; i < total; i++) {
+            var dot = document.createElement("div");
+            dot.className = "dot" + (i === 0 ? " active" : "");
+            dot.setAttribute("data-i", i);
+            dot.onclick = function() { irPara(parseInt(this.getAttribute("data-i"))); };
+            dotsContainer.appendChild(dot);
+        }
+
+        function irPara(index) {
+            atual = index;
+            track.style.transform = "translateX(-" + (atual * 100) + "%)";
+            var dots = document.querySelectorAll(".dot");
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].className = "dot" + (i === atual ? " active" : "");
+            }
+        }
+
+        function mudar(direcao) {
+            atual = (atual + direcao + total) % total;
+            irPara(atual);
+        }
+
+        setInterval(function() { mudar(1); }, 9000);
+
+        function toggleFaq(btn) {
+            var item = btn.parentElement;
+            item.classList.toggle("aberto");
+        }
+
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('.header');
+            var slide = document.querySelector('.slide');
+            if (!slide) return;
+            var slideHeight = slide.offsetHeight;
+            if (window.scrollY > slideHeight) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    
+</body>
+</html>
